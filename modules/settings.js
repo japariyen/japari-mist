@@ -34,7 +34,7 @@ const argv = require('yargs')
         node: {
             demand: false,
             default: null,
-            describe: 'Node to use: geth, eth',
+            describe: 'Node to use: gjpy, eth',
             requiresArg: true,
             nargs: 1,
             type: 'string',
@@ -66,7 +66,7 @@ const argv = require('yargs')
             type: 'string',
             group: 'Mist options:',
         },
-        gethpath: {
+        gjpypath: {
             demand: false,
             describe: 'Path to Gjpy executable to use instead of default.',
             requiresArg: true,
@@ -228,8 +228,8 @@ class Settings {
         return argv.swarmurl;
     }
 
-    get gethPath() {
-        return argv.gethpath;
+    get gjpyPath() {
+        return argv.gjpypath;
     }
 
     get ethPath() {

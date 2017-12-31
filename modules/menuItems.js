@@ -208,7 +208,7 @@ let menuTempl = function (webviews) {
                                     userPath += '/.web3/keys';
                                 }
 
-                            // geth
+                            // gjpy
                             } else {
                                 if (process.platform === 'darwin') {
                                     userPath += '/Library/Ethereum/keystore';
@@ -483,16 +483,16 @@ let menuTempl = function (webviews) {
         const nodeSubmenu = [];
 
         const ethClient = ClientBinaryManager.getClient('eth');
-        const gethClient = ClientBinaryManager.getClient('geth');
+        const gjpyClient = ClientBinaryManager.getClient('gjpy');
 
-        if (gethClient) {
+        if (gjpyClient) {
             nodeSubmenu.push({
-                label: `Gjpy ${gethClient.version}`,
+                label: `Gjpy ${gjpyClient.version}`,
                 checked: ethereumNode.isOwnNode && ethereumNode.isGjpy,
                 enabled: ethereumNode.isOwnNode,
                 type: 'checkbox',
                 click() {
-                    restartNode('geth', null, 'fast', webviews);
+                    restartNode('gjpy', null, 'fast', webviews);
                 },
             });
         }
@@ -572,7 +572,7 @@ let menuTempl = function (webviews) {
             checked: ethereumNode.isLightMode,
             type: 'checkbox',
             click() {
-                restartNode('geth', null, (ethereumNode.isLightMode) ? 'fast' : 'light');
+                restartNode('gjpy', null, (ethereumNode.isLightMode) ? 'fast' : 'light');
             },
         });
     }

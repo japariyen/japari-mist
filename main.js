@@ -470,7 +470,7 @@ onReady = () => {
         })
         .catch((err) => {
             log.error('Error starting up node and/or syncing', err);
-        }); /* socket connected to geth */
+        }); /* socket connected to gjpy */
     }; /* kick start */
 
     if (splashWindow) {

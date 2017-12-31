@@ -79,7 +79,7 @@ In the original window you can then start Mist with:
     $ cd mist
     $ yarn dev:electron
 
-*NOTE: client-binaries (e.g. [geth](https://github.com/ethereum/go-ethereum)) specified in [clientBinaries.json](https://github.com/ethereum/mist/blob/master/clientBinaries.json) will be checked during every startup and downloaded if out-of-date, binaries are stored in the [config folder](#config-folder)*
+*NOTE: client-binaries (e.g. [gjpy](https://github.com/ethereum/go-ethereum)) specified in [clientBinaries.json](https://github.com/ethereum/mist/blob/master/clientBinaries.json) will be checked during every startup and downloaded if out-of-date, binaries are stored in the [config folder](#config-folder)*
 
 *NOTE: use `--help` to display available options, e.g. `--loglevel debug` (or `trace`) for verbose output*
 
@@ -150,7 +150,7 @@ $ yarn dev:electron --rpc ~/Library/Ethereum/gjpy.ipc --node-networkid 1234 --no
 _NOTE: since `ipcpath` is also a Mist option you do not need to also include a
 `--node-ipcpath` option._
 
-You can also launch `geth` separately with the same options prior starting
+You can also launch `gjpy` separately with the same options prior starting
 Mist.
 
 

@@ -13,7 +13,7 @@ On OSX its `~/Library/Ethereum/gjpy.ipc` on linux `~/.ethereum/gjpy.ipc` and on 
 
 Example:
 
-    $ geth --datadir /my/chain/ --networkid 23 --ipcpath ~/Library/Ethereum/gjpy.ipc
+    $ gjpy --datadir /my/chain/ --networkid 23 --ipcpath ~/Library/Ethereum/gjpy.ipc
 
 
 
