@@ -76,7 +76,7 @@ class EthereumNode extends EventEmitter {
         return this._type === 'eth';
     }
 
-    get isGeth() {
+    get isGjpy() {
         return this._type === 'geth';
     }
 
@@ -459,7 +459,7 @@ class EthereumNode extends EventEmitter {
 
                         if (nodeType === 'geth') {
                             if (dataStr.indexOf('fatal: error') >= 0) {
-                                const error = new Error(`Geth error: ${dataStr}`);
+                                const error = new Error(`Gjpy error: ${dataStr}`);
 
                                 if (dataStr.indexOf('bind') >= 0) {
                                     error.tag = UNABLE_TO_BIND_PORT_ERROR;

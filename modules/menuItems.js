@@ -487,8 +487,8 @@ let menuTempl = function (webviews) {
 
         if (gethClient) {
             nodeSubmenu.push({
-                label: `Geth ${gethClient.version}`,
-                checked: ethereumNode.isOwnNode && ethereumNode.isGeth,
+                label: `Gjpy ${gethClient.version}`,
+                checked: ethereumNode.isOwnNode && ethereumNode.isGjpy,
                 enabled: ethereumNode.isOwnNode,
                 type: 'checkbox',
                 click() {
@@ -565,7 +565,7 @@ let menuTempl = function (webviews) {
         ] });
 
     // Light mode switch should appear when not in Solo Mode (dev network)
-    if (ethereumNode.isOwnNode && ethereumNode.isGeth && !ethereumNode.isDevNetwork) {
+    if (ethereumNode.isOwnNode && ethereumNode.isGjpy && !ethereumNode.isDevNetwork) {
         devToolsMenu.push({
             label: 'Sync with Light client (beta)',
             enabled: true,

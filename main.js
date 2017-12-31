@@ -388,7 +388,7 @@ onReady = () => {
                 throw new Error('Either the node didn\'t start or IPC socket failed to connect.');
             }
 
-            /* At this point Geth is running and the socket is connected. */
+            /* At this point Gjpy is running and the socket is connected. */
             log.info('Connected via IPC to node.');
 
             // update menu, to show node switching possibilities
@@ -399,7 +399,7 @@ onReady = () => {
         })
         .then(function onboarding(resultData) {
 
-            if (ethereumNode.isGeth && (resultData.result === null || (_.isArray(resultData.result) && resultData.result.length === 0))) {
+            if (ethereumNode.isGjpy && (resultData.result === null || (_.isArray(resultData.result) && resultData.result.length === 0))) {
                 log.info('No accounts setup yet, lets do onboarding first.');
 
                 return new Q((resolve, reject) => {

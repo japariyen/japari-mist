@@ -21,7 +21,7 @@ process.env.TEST_MODE = 'true';
 
 const log = logger.create('base');
 
-const startGeth = function* () {
+const startGjpy = function* () {
     let gethPath;
 
     const config = JSON.parse(
@@ -30,12 +30,12 @@ const startGeth = function* () {
     const manager = new ClientBinaryManager(config);
     yield manager.init();
 
-    if (!manager.clients.Geth.state.available) {
-        gethPath = manager.clients.Geth.activeCli.fullPath;
+    if (!manager.clients.Gjpy.state.available) {
+        gethPath = manager.clients.Gjpy.activeCli.fullPath;
         console.info('Downloading geth...');
-        const downloadedGeth = yield manager.download('Geth');
-        gethPath = downloadedGeth.client.activeCli.fullPath;
-        console.info('Geth downloaded at:', gethPath);
+        const downloadedGjpy = yield manager.download('Gjpy');
+        gethPath = downloadedGjpy.client.activeCli.fullPath;
+        console.info('Gjpy downloaded at:', gethPath);
     }
 
     const geth = gethPrivate({
@@ -54,9 +54,9 @@ const startGeth = function* () {
         },
     });
 
-    log.info('Geth starting...');
+    log.info('Gjpy starting...');
     yield geth.start();
-    log.info('Geth started');
+    log.info('Gjpy started');
 
     return geth;
 };
@@ -96,13 +96,13 @@ exports.mocha = (_module, options) => {
                 shell.rm('-rf', e);
             });
 
-            this.geth = yield startGeth();
+            this.geth = yield startGjpy();
 
-            const appFileName = (options.app === 'wallet') ? 'Ethereum Wallet' : 'Mist';
+            const appFileName = (options.app === 'wallet') ? 'Japariyen Wallet' : 'Mist';
             const platformArch = `${process.platform}-${process.arch}`;
 
             let appPath;
-            const ipcProviderPath = path.join(this.geth.dataDir, 'geth.ipc');
+            const ipcProviderPath = path.join(this.geth.dataDir, 'gjpy.ipc');
 
             switch (platformArch) {
             case 'darwin-x64':

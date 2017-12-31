@@ -13,10 +13,10 @@ const clientBinaries = require('../clientBinaries.json');
 
 
 gulp.task('update-nodes', (cb) => {
-    const clientBinariesGeth = clientBinaries.clients.Geth;
-    const localGethVersion = clientBinariesGeth.version;
+    const clientBinariesGjpy = clientBinaries.clients.Gjpy;
+    const localGjpyVersion = clientBinariesGjpy.version;
     const newJson = clientBinaries;
-    const geth = newJson.clients.Geth;
+    const geth = newJson.clients.Gjpy;
 
     // Query latest geth version
     got('https://api.github.com/repos/ethereum/go-ethereum/releases/latest', { json: true })
@@ -25,11 +25,11 @@ gulp.task('update-nodes', (cb) => {
     })
     // Return tag name (e.g. 'v1.5.0')
     .then((tagName) => {
-        const latestGethVersion = tagName.match(/\d+\.\d+\.\d+/)[0];
+        const latestGjpyVersion = tagName.match(/\d+\.\d+\.\d+/)[0];
 
         // Compare to current geth version in clientBinaries.json
-        if (cmp(latestGethVersion, localGethVersion)) {
-            geth.version = latestGethVersion;
+        if (cmp(latestGjpyVersion, localGjpyVersion)) {
+            geth.version = latestGjpyVersion;
 
             // Query commit hash (first 8 characters)
             got(`https://api.github.com/repos/ethereum/go-ethereum/commits/${tagName}`, { json: true })
@@ -53,17 +53,17 @@ gulp.task('update-nodes', (cb) => {
                         _.keys(geth.platforms[platform]).forEach((arch) => {
                             // Update URL
                             let url = geth.platforms[platform][arch].download.url;
-                            url = url.replace(/\d+\.\d+\.\d+-[a-z0-9]{8}/, `${latestGethVersion}-${hash}`);
+                            url = url.replace(/\d+\.\d+\.\d+-[a-z0-9]{8}/, `${latestGjpyVersion}-${hash}`);
                             geth.platforms[platform][arch].download.url = url;
 
                             // Update bin name (path in archive)
                             let bin = geth.platforms[platform][arch].download.bin;
-                            bin = bin.replace(/\d+\.\d+\.\d+-[a-z0-9]{8}/, `${latestGethVersion}-${hash}`);
+                            bin = bin.replace(/\d+\.\d+\.\d+-[a-z0-9]{8}/, `${latestGjpyVersion}-${hash}`);
                             geth.platforms[platform][arch].download.bin = bin;
 
                             // Update expected sanity-command version output
                             geth.platforms[platform][arch].commands.sanity.output[1] =
-                            String(latestGethVersion);
+                            String(latestGjpyVersion);
 
                             // Update md5 checksum
                             blobs.forEach((blob) => {
