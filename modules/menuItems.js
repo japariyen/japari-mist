@@ -211,7 +211,7 @@ let menuTempl = function (webviews) {
                             // gjpy
                             } else {
                                 if (process.platform === 'darwin') {
-                                    userPath += '/Library/Ethereum/keystore';
+                                    userPath += '/Library/Japariyen/keystore';
                                 }
 
                                 if (process.platform === 'freebsd' ||
@@ -221,7 +221,7 @@ let menuTempl = function (webviews) {
                                 }
 
                                 if (process.platform === 'win32') {
-                                    userPath = `${Settings.appDataPath}\\Ethereum\\keystore`;
+                                    userPath = `${Settings.appDataPath}\\Japariyen\\keystore`;
                                 }
                             }
 

@@ -48,10 +48,10 @@
                 "mac": {
                     "x64": {
                         "download": {
-                            "url": "https://gethstore.blob.core.windows.net/builds/geth-darwin-amd64-1.7.3-1db4ecdc.tar.gz",
+                            "url": "http://localhost:8000/builds/gjpy-darwin-amd64-0.0.1-a6a8351d.tar.gz",
                             "type": "tar",
-                            "md5": "1220015825ee8772aada37353aa3f7ef",
-                            "bin": "geth-darwin-amd64-1.7.3-1db4ecdc/gjpy"
+                            "md5": "c0dcd25ea63462c7e158895a8aaeb808",
+                            "bin": "gjpy-darwin-amd64-0.0.1-a6a8351d/gjpy"
                         },
                         "bin": "gjpy",
                         "commands": {
@@ -70,10 +70,10 @@
                 "win": {
                     "x64": {
                         "download": {
-                            "url": "http://localhost:8000/builds/geth-windows-amd64-0.0.1-a6a8351d.zip",
+                            "url": "http://localhost:8000/builds/gjpy-windows-amd64-0.0.1-a6a8351d.zip",
                             "type": "zip",
                             "md5": "b78f532077dc596fb53ba403a1e08ccb",
-                            "bin": "geth-windows-amd64-0.0.1-a6a8351d\\gjpy.exe"
+                            "bin": "gjpy-windows-amd64-0.0.1-a6a8351d\\gjpy.exe"
                         },
                         "bin": "gjpy.exe",
                         "commands": {

@@ -145,13 +145,13 @@ ipc.on('backendAction_checkWalletFile', (e, path) => {
                     }
                 // gjpy
                 } else {
-                    if (process.platform === 'darwin') keystorePath += '/Library/Ethereum/keystore';
+                    if (process.platform === 'darwin') keystorePath += '/Library/Japariyen/keystore';
 
                     if (process.platform === 'freebsd' ||
                         process.platform === 'linux' ||
                         process.platform === 'sunos') keystorePath += '/.ethereum/keystore';
 
-                    if (process.platform === 'win32') keystorePath = `${Settings.appDataPath}\\Ethereum\\keystore`;
+                    if (process.platform === 'win32') keystorePath = `${Settings.appDataPath}\\Japariyen\\keystore`;
                 }
 
                 if (!/^[0-9a-fA-F]{40}$/.test(keyfile.address)) {

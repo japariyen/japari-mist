@@ -5,7 +5,7 @@ const spawn = require('child_process').spawn;
 const { dialog } = require('electron');
 const Windows = require('./windows.js');
 const Settings = require('./settings');
-const log = require('./utils/logger').create('EthereumNode');
+const log = require('./utils/logger').create('JapariyenNode');
 const logRotate = require('log-rotate');
 const EventEmitter = require('events').EventEmitter;
 const Sockets = require('./socketManager');
@@ -31,7 +31,7 @@ const STATES = {
 /**
  * Etheruem nodes manager.
  */
-class EthereumNode extends EventEmitter {
+class JapariyenNode extends EventEmitter {
     constructor() {
         super();
 
@@ -552,7 +552,7 @@ class EthereumNode extends EventEmitter {
 }
 
 
-EthereumNode.STARTING = 0;
+JapariyenNode.STARTING = 0;
 
 
-module.exports = new EthereumNode();
+module.exports = new JapariyenNode();
