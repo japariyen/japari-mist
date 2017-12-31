@@ -79,7 +79,7 @@ In the original window you can then start Mist with:
     $ cd mist
     $ yarn dev:electron
 
-*NOTE: client-binaries (e.g. [geth](https://github.com/ethereum/go-ethereum)) specified in [clientBinaries.json](https://github.com/ethereum/mist/blob/master/clientBinaries.json) will be checked during every startup and downloaded if out-of-date, binaries are stored in the [config folder](#config-folder)*
+*NOTE: client-binaries (e.g. [gjpy](https://github.com/ethereum/go-ethereum)) specified in [clientBinaries.json](https://github.com/ethereum/mist/blob/master/clientBinaries.json) will be checked during every startup and downloaded if out-of-date, binaries are stored in the [config folder](#config-folder)*
 
 *NOTE: use `--help` to display available options, e.g. `--loglevel debug` (or `trace`) for verbose output*
 
@@ -109,9 +109,9 @@ $ yarn dev:electron --rpc http://localhost:8545
 ```
 
 
-### Passing options to Geth
+### Passing options to Gjpy
 
-You can pass command-line options directly to Geth by prefixing them with `--node-` in
+You can pass command-line options directly to Gjpy by prefixing them with `--node-` in
 the command-line invocation:
 
 ```bash
@@ -122,14 +122,14 @@ The `--rpc` Mist option is a special case. If you set this to an IPC socket file
 path then the `--ipcpath` option automatically gets set, i.e.:
 
 ```bash
-$ yarn dev:electron --rpc /my/geth.ipc
+$ yarn dev:electron --rpc /my/gjpy.ipc
 ```
 
 ...is the same as doing...
 
 
 ```bash
-$ yarn dev:electron --rpc /my/geth.ipc --node-ipcpath /my/geth.ipc
+$ yarn dev:electron --rpc /my/gjpy.ipc --node-ipcpath /my/gjpy.ipc
 ```
 
 ### Creating a local private net
@@ -144,13 +144,13 @@ To run a private network you will need to set the IPC path, network id and data
 folder:
 
 ```bash
-$ yarn dev:electron --rpc ~/Library/Ethereum/geth.ipc --node-networkid 1234 --node-datadir ~/Library/Ethereum/privatenet
+$ yarn dev:electron --rpc ~/Library/Japariyen/gjpy.ipc --node-networkid 1234 --node-datadir ~/Library/Japariyen/privatenet
 ```
 
 _NOTE: since `ipcpath` is also a Mist option you do not need to also include a
 `--node-ipcpath` option._
 
-You can also launch `geth` separately with the same options prior starting
+You can also launch `gjpy` separately with the same options prior starting
 Mist.
 
 
@@ -178,7 +178,7 @@ To generate the binaries for Mist run:
 
     $ gulp
 
-To generate the Ethereum Wallet (this will pack the one Ðapp from https://github.com/ethereum/meteor-dapp-wallet):
+To generate the Japariyen Wallet (this will pack the one Ðapp from https://github.com/ethereum/meteor-dapp-wallet):
 
     $ gulp --wallet
 

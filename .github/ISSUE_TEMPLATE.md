@@ -5,7 +5,7 @@
 ```
 Version: `0.0.0`
 OS & Version: windows/linux/osx
-Node version: `geth 0.0.0` 
+Node version: `gjpy 0.0.0` 
 Number of blocks synchronized: 0
 ```
 

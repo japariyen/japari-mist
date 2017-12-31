@@ -5,13 +5,13 @@ const spawn = require('child_process').spawn;
 const { dialog } = require('electron');
 const Windows = require('./windows.js');
 const Settings = require('./settings');
-const log = require('./utils/logger').create('EthereumNode');
+const log = require('./utils/logger').create('JapariyenNode');
 const logRotate = require('log-rotate');
 const EventEmitter = require('events').EventEmitter;
 const Sockets = require('./socketManager');
 const ClientBinaryManager = require('./clientBinaryManager');
 
-const DEFAULT_NODE_TYPE = 'geth';
+const DEFAULT_NODE_TYPE = 'gjpy';
 const DEFAULT_NETWORK = 'main';
 const DEFAULT_SYNCMODE = 'fast';
 
@@ -31,7 +31,7 @@ const STATES = {
 /**
  * Etheruem nodes manager.
  */
-class EthereumNode extends EventEmitter {
+class JapariyenNode extends EventEmitter {
     constructor() {
         super();
 
@@ -76,8 +76,8 @@ class EthereumNode extends EventEmitter {
         return this._type === 'eth';
     }
 
-    get isGeth() {
-        return this._type === 'geth';
+    get isGjpy() {
+        return this._type === 'gjpy';
     }
 
     get isMainNetwork() {
@@ -257,7 +257,7 @@ class EthereumNode extends EventEmitter {
 
     /**
      * Start an ethereum node.
-     * @param  {String} nodeType geth, eth, etc
+     * @param  {String} nodeType gjpy, eth, etc
      * @param  {String} network  network id
      * @return {Promise}
      */
@@ -315,9 +315,9 @@ class EthereumNode extends EventEmitter {
                 this.lastError = err.tag;
                 this.state = STATES.ERROR;
 
-                // if unable to start eth node then write geth to defaults
+                // if unable to start eth node then write gjpy to defaults
                 if (nodeType === 'eth') {
-                    Settings.saveUserData('node', 'geth');
+                    Settings.saveUserData('node', 'gjpy');
                 }
 
                 throw err;
@@ -358,7 +358,7 @@ class EthereumNode extends EventEmitter {
      */
     __startProcess(nodeType, network, binPath, _syncMode) {
         let syncMode = _syncMode;
-        if (nodeType === 'geth' && !syncMode) {
+        if (nodeType === 'gjpy' && !syncMode) {
             syncMode = 'fast';
         }
 
@@ -408,7 +408,7 @@ class EthereumNode extends EventEmitter {
 
                 // Starts Main net
                 default:
-                    args = (nodeType === 'geth')
+                    args = (nodeType === 'gjpy')
                         ? [
                             '--syncmode', syncMode,
                             '--cache', ((process.arch === 'x64') ? '1024' : '512')
@@ -457,9 +457,9 @@ class EthereumNode extends EventEmitter {
                     if (STATES.STARTING === this.state) {
                         const dataStr = data.toString().toLowerCase();
 
-                        if (nodeType === 'geth') {
+                        if (nodeType === 'gjpy') {
                             if (dataStr.indexOf('fatal: error') >= 0) {
-                                const error = new Error(`Geth error: ${dataStr}`);
+                                const error = new Error(`Gjpy error: ${dataStr}`);
 
                                 if (dataStr.indexOf('bind') >= 0) {
                                     error.tag = UNABLE_TO_BIND_PORT_ERROR;
@@ -488,7 +488,7 @@ class EthereumNode extends EventEmitter {
                     /*
                         We wait a short while before marking startup as successful
                         because we may want to parse the initial node output for
-                        errors, etc (see geth port-binding error above)
+                        errors, etc (see gjpy port-binding error above)
                     */
                     setTimeout(() => {
                         if (STATES.STARTING === this.state) {
@@ -552,7 +552,7 @@ class EthereumNode extends EventEmitter {
 }
 
 
-EthereumNode.STARTING = 0;
+JapariyenNode.STARTING = 0;
 
 
-module.exports = new EthereumNode();
+module.exports = new JapariyenNode();

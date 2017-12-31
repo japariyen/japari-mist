@@ -208,10 +208,10 @@ let menuTempl = function (webviews) {
                                     userPath += '/.web3/keys';
                                 }
 
-                            // geth
+                            // gjpy
                             } else {
                                 if (process.platform === 'darwin') {
-                                    userPath += '/Library/Ethereum/keystore';
+                                    userPath += '/Library/Japariyen/keystore';
                                 }
 
                                 if (process.platform === 'freebsd' ||
@@ -221,7 +221,7 @@ let menuTempl = function (webviews) {
                                 }
 
                                 if (process.platform === 'win32') {
-                                    userPath = `${Settings.appDataPath}\\Ethereum\\keystore`;
+                                    userPath = `${Settings.appDataPath}\\Japariyen\\keystore`;
                                 }
                             }
 
@@ -483,16 +483,16 @@ let menuTempl = function (webviews) {
         const nodeSubmenu = [];
 
         const ethClient = ClientBinaryManager.getClient('eth');
-        const gethClient = ClientBinaryManager.getClient('geth');
+        const gjpyClient = ClientBinaryManager.getClient('gjpy');
 
-        if (gethClient) {
+        if (gjpyClient) {
             nodeSubmenu.push({
-                label: `Geth ${gethClient.version}`,
-                checked: ethereumNode.isOwnNode && ethereumNode.isGeth,
+                label: `Gjpy ${gjpyClient.version}`,
+                checked: ethereumNode.isOwnNode && ethereumNode.isGjpy,
                 enabled: ethereumNode.isOwnNode,
                 type: 'checkbox',
                 click() {
-                    restartNode('geth', null, 'fast', webviews);
+                    restartNode('gjpy', null, 'fast', webviews);
                 },
             });
         }
@@ -565,14 +565,14 @@ let menuTempl = function (webviews) {
         ] });
 
     // Light mode switch should appear when not in Solo Mode (dev network)
-    if (ethereumNode.isOwnNode && ethereumNode.isGeth && !ethereumNode.isDevNetwork) {
+    if (ethereumNode.isOwnNode && ethereumNode.isGjpy && !ethereumNode.isDevNetwork) {
         devToolsMenu.push({
             label: 'Sync with Light client (beta)',
             enabled: true,
             checked: ethereumNode.isLightMode,
             type: 'checkbox',
             click() {
-                restartNode('geth', null, (ethereumNode.isLightMode) ? 'fast' : 'light');
+                restartNode('gjpy', null, (ethereumNode.isLightMode) ? 'fast' : 'light');
             },
         });
     }

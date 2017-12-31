@@ -151,7 +151,7 @@ app.on('ready', () => {
     // if using HTTP RPC then inform user
     if (Settings.rpcMode === 'http') {
         dialog.showErrorBox('Insecure RPC connection', `
-WARNING: You are connecting to an Ethereum node via: ${Settings.rpcHttpPath}
+WARNING: You are connecting to an Japariyen node via: ${Settings.rpcHttpPath}
 
 This is less secure than using local IPC - your passwords will be sent over the wire in plaintext.
 
@@ -388,7 +388,7 @@ onReady = () => {
                 throw new Error('Either the node didn\'t start or IPC socket failed to connect.');
             }
 
-            /* At this point Geth is running and the socket is connected. */
+            /* At this point Gjpy is running and the socket is connected. */
             log.info('Connected via IPC to node.');
 
             // update menu, to show node switching possibilities
@@ -399,7 +399,7 @@ onReady = () => {
         })
         .then(function onboarding(resultData) {
 
-            if (ethereumNode.isGeth && (resultData.result === null || (_.isArray(resultData.result) && resultData.result.length === 0))) {
+            if (ethereumNode.isGjpy && (resultData.result === null || (_.isArray(resultData.result) && resultData.result.length === 0))) {
                 log.info('No accounts setup yet, lets do onboarding first.');
 
                 return new Q((resolve, reject) => {
@@ -470,7 +470,7 @@ onReady = () => {
         })
         .catch((err) => {
             log.error('Error starting up node and/or syncing', err);
-        }); /* socket connected to geth */
+        }); /* socket connected to gjpy */
     }; /* kick start */
 
     if (splashWindow) {
