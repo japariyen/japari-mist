@@ -6,10 +6,10 @@
                 "linux": {
                     "x64": {
                         "download": {
-                            "url": "https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.7.3-1db4ecdc.tar.gz",
-                            "type": "tar",
-                            "md5": "cc4a666fd21ae3627ee8ae974650b2f7",
-                            "bin": "geth-linux-amd64-1.7.3-1db4ecdc/gjpy"
+                            "url": "https://github.com/japariyen/go-japariyen/releases/download/v.0.0.1/gjpy-linux-amd64-9ce85d5.zip",
+                            "type": "zip",
+                            "md5": "2ac8d992f4f163756bc106cab3e7cb96",
+                            "bin": "gjpy-linux-amd64-9ce85d5/gjpy"
                         },
                         "bin": "gjpy",
                         "commands": {
@@ -26,10 +26,10 @@
                     },
                     "ia32": {
                         "download": {
-                            "url": "https://gethstore.blob.core.windows.net/builds/geth-linux-386-1.7.3-1db4ecdc.tar.gz",
-                            "type": "tar",
-                            "md5": "84b3a2d491db6f79fd84daa242da9ec6",
-                            "bin": "geth-linux-386-1.7.3-1db4ecdc/gjpy"
+                            "url": "https://github.com/japariyen/go-japariyen/releases/download/v.0.0.1/gjpy-linux-386-9ce85d5.zip",
+                            "type": "zip",
+                            "md5": "875bea1a0d8471f025a2c7d2fb69de67",
+                            "bin": "gjpy-linux-386-9ce85d5/gjpy"
                         },
                         "bin": "gjpy",
                         "commands": {
@@ -48,10 +48,10 @@
                 "mac": {
                     "x64": {
                         "download": {
-                            "url": "http://localhost:8000/builds/gjpy-darwin-amd64-0.0.1-a6a8351d.tar.gz",
-                            "type": "tar",
-                            "md5": "c0dcd25ea63462c7e158895a8aaeb808",
-                            "bin": "gjpy-darwin-amd64-0.0.1-a6a8351d/gjpy"
+                            "url": "https://github.com/japariyen/go-japariyen/releases/download/v.0.0.1/gjpy-darwin-10.6-amd64-9ce85d5.zip",
+                            "type": "zip",
+                            "md5": "5b0255910f42477bcb7f8deceec740e5",
+                            "bin": "gjpy-darwin-10.6-amd64-9ce85d5/gjpy"
                         },
                         "bin": "gjpy",
                         "commands": {
@@ -70,10 +70,10 @@
                 "win": {
                     "x64": {
                         "download": {
-                            "url": "http://localhost:8000/builds/gjpy-windows-amd64-0.0.1-a6a8351d.zip",
+                            "url": "https://github.com/japariyen/go-japariyen/releases/download/v.0.0.1/gjpy-windows-4.0-amd64-9ce85d5.zip",
                             "type": "zip",
-                            "md5": "b78f532077dc596fb53ba403a1e08ccb",
-                            "bin": "gjpy-windows-amd64-0.0.1-a6a8351d\\gjpy.exe"
+                            "md5": "e509ef2f9858904172dacc3f60885e53",
+                            "bin": "gjpy-windows-4.0-amd64-9ce85d5\\gjpy.exe"
                         },
                         "bin": "gjpy.exe",
                         "commands": {
@@ -90,10 +90,10 @@
                     },
                     "ia32": {
                         "download": {
-                            "url": "https://gethstore.blob.core.windows.net/builds/geth-windows-386-1.7.3-1db4ecdc.zip",
+                            "url": "https://github.com/japariyen/go-japariyen/releases/download/v.0.0.1/gjpy-windows-4.0-386-9ce85d5.zip",
                             "type": "zip",
-                            "md5": "50b353bf3639a502b06e0098c751df67",
-                            "bin": "geth-windows-386-1.7.3-1db4ecdc\\gjpy.exe"
+                            "md5": "4db0209cd4f0bd6751457657482724b2",
+                            "bin": "gjpy-windows-4.0-386-9ce85d5\\gjpy.exe"
                         },
                         "bin": "gjpy.exe",
                         "commands": {
