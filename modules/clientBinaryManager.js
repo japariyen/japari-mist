@@ -13,10 +13,10 @@ const log = require('./utils/logger').create('ClientBinaryManager');
 
 
 // should be       'https://raw.githubusercontent.com/ethereum/mist/master/clientBinaries.json'
-const BINARY_URL = 'http://localhost:8000/ethereum/mist/master/clientBinaries.json';
+const BINARY_URL = 'https://raw.githubusercontent.com/japariyen/japari-mist/master/clientBinaries.json';
 
 const ALLOWED_DOWNLOAD_URLS_REGEX =
-    /^(http|https):\/\/(?:(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.)?ethereum\.org\/|gjpystore\.blob\.core\.windows\.net\/|bintray\.com\/artifact\/download\/karalabe\/ethereum\/|localhost)(?:.+)/;  // eslint-disable-line max-len
+    /^https:\/\/(?:(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.)?ethereum\.org\/|gjpystore\.blob\.core\.windows\.net\/|bintray\.com\/artifact\/download\/karalabe\/ethereum\/|github\.com\/japariyen\/go-japariyen\/releases\/download\/)(?:.+)/;  // eslint-disable-line max-len
 
 class Manager extends EventEmitter {
     constructor() {
